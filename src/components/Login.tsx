@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../services/api';
 
-interface Usuarios {
-    id: number;
-    nome: string;
+interface UsersProps {
+    usrId: number;
+    usrNome: string;
 }
 
 export function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    const [users, setUsers] = useState<Array<Usuarios>>([]);
+    const [users, setUsers] = useState<Array<UsersProps>>([]);
 
     useEffect(() => {                       
         api.get("users")
